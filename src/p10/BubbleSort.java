@@ -16,7 +16,7 @@ public class BubbleSort {
         int flag;
         for(int i=0; i<n-1; i++){
             flag = 0;
-            for(int j=0; j<n-1; j++){
+            for(int j=0; j<n-i-1; j++){
                 if(a[j]>a[j+1]){
                     int t = a[j];
                     a[j] = a[j+1];
