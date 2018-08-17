@@ -36,5 +36,7 @@ public class BinarySearch {
         }
         if(first>last)
             System.out.println("Element is not in the list");
+
+        in.close();
     }
 }
