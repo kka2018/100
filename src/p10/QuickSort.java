@@ -1,5 +1,6 @@
 package p10;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class QuickSort {
@@ -22,9 +23,18 @@ public class QuickSort {
         return pIndex;
     }
 
+    public static int randomizedPartition(int[] arr, int start, int end){
+        Random rand = new Random();
+        int pivotIndex = (int) (start +((end - start + 1) * Math.random()));
+        int temp = arr[pivotIndex];
+        arr[pivotIndex] = arr[end];
+        arr[end] = temp;
+        return partition(arr, start, end);
+    }
+
     public static void quicksort(int[] arr, int start, int end){
         if(start<end) {
-            int pIndex = partition(arr, start, end);
+            int pIndex = randomizedPartition(arr, start, end);
             quicksort(arr, start, pIndex - 1);
             quicksort(arr, pIndex + 1, end);
         }
